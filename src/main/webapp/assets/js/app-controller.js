@@ -163,7 +163,6 @@ angular.module('iStore.controller', [])
 
     $scope.showAllPelanggan();
   }])
-;
 
 //End Of Pelanggan Controller
 //=======================================================================================
