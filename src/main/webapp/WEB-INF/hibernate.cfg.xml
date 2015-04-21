@@ -4,9 +4,9 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
     <property name="hibernate.show_sql">true</property>
-
+<!--
     <property name="hbm2ddl.auto">create</property>
-
+-->
     <mapping class="com.yodiyanwar.model.barang.Barang"/>
     <mapping class="com.yodiyanwar.model.pelanggan.Pelanggan"/>
     <mapping class="com.yodiyanwar.model.transaksi.Transaksi"/>

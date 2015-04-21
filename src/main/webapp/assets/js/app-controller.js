@@ -170,7 +170,7 @@ angular.module('iStore.controller', [])
 //=======================================================================================
 //Transaksi Controller
 
-  .controller('TransaksiController', ['$http', '$scope', function($http, $scope){
+  .controller('TransaksiController', ['$http', '$scope', 'BarangController', 'PelangganController', function($http, $scope, BarangController, PelangganController){
 
     $scope.showAllTransaksi = function(){
       $http.get('transaksi/transaksi.json')
