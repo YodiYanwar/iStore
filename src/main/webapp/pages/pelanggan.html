@@ -26,6 +26,7 @@
                 <label class="col-sm-2 control-label">Jenis Kelamin :</label>
                 <div class="col-sm-8">
                   <select class="selectpicker" ng-model="plg.jenisKelamin" id="plg.jenisKelamin" name="plg.jenisKelamin" data-placeholder="PILIH JENIS KELAMIN">
+                  	<option value="" disabled selected>Pilih Jenis Kelamin</option>
                     <option value="PRIA">Pria</option>
                     <option value="WANITA">Wanita</option>
                   </select>
@@ -44,7 +45,7 @@
               <div class="form-group">
                 <label class="col-sm-2 control-label">Alamat :</label>
                 <div class="col-sm-8">
-                  <input type="textarea" class="form-control" ng-model="plg.alamat" placeholder="Masukan Alamat disini" />
+                  <textarea class="form-control" rows="3" ng-model="plg.alamat" placeholder="Masukan Alamat disini"></textarea>
                 </div>
               </div>                                           
             </form>

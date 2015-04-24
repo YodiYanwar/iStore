@@ -181,28 +181,17 @@ angular.module('iStore.controller', [])
       });
     };
 
-    $scope.tambahPlg = function(trans){
-      $http.post('transaksi/add',trans)
-      .success(function(response){
-        $scope.showAllTransaksi();
-      })
-      .error(function(data, status, headers, config) {
-        alert( "Exception details: " + JSON.stringify({data: data}));
-      });
-      /*console.log("Tambah Barang");
-      console.log("Id Barang   : "+brg.idBarang);
-      console.log("Nama Barang : "+brg.namaBrg);
-      console.log("Satuan      : "+brg.satuan);
-      console.log("Stok        : "+brg.stok);
-      console.log("Kategori    : "+brg.kategori);
-      console.log("Harga       : Rp."+brg.harga);
-      console.log("Tgl Input   : "+brg.tglInput);
-      console.log("Tgl Update  : "+brg.tglUpdate);
-      */
+    $scope.tambahTrans = function(t){
+      $http.post('transaksi/add',t)
+        .success(function(response){
+
+        })
     };
 
-    $scope.tambahTransModal = function(){
+    $scope.TambahOrEditTransModal = function(){
       $scope.editMode = false;
+      $scope.barangs = BarangController.showAllBarang();
+      $scope.pelanggans = PelangganController.showAllPelanggan();
     };
 
     $scope.hapus = function(id){
@@ -215,29 +204,7 @@ angular.module('iStore.controller', [])
       });
     };
 
-    $scope.editAct = function(trans){
-      $http.put('transaksi/edit', trans)
-      .success(function(){
-        $scope.trans = trans;
-        $scope.editMode = false;
-        $scope.showAllTransaksi();
-      })
-      .error(function(data, status, headers, config) {
-        alert( "Exception details: " + JSON.stringify({data: data}));
-      });
-      console.log("Edit pelanggan");
-      console.log(plg);
-    };
 
-    $scope.edit = function(trans){
-      $scope.trans = trans;
-      $scope.editMode = true;
-    };
-
-    $scope.injectIndex = function(trans){
-      var index = $scope.trans.indexOf(trans);
-      $scope.trans = trans;
-    };
 
     $scope.showAllTransaksi();
   }])

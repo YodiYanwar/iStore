@@ -32,15 +32,15 @@ public class Transaksi {
     private Barang barang;
 
     @Column(name = "qty", nullable = false)
-    private Integer kuantitas;
+    private Integer qty;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipeBayar", nullable = false)
+    private TipeBayar tipeBayar;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "tgl_transaksi", nullable = false)
+    @Column(name = "tglTransaksi", nullable = false)
     private Date tglTransaksi;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "tipePembayaran", nullable = false, length = 35)
-    private tipeBayar tipePembayaran;
 
 
     public Integer getIdTransaksi() {
@@ -68,11 +68,11 @@ public class Transaksi {
     }
 
     public Integer getKuantitas() {
-        return kuantitas;
+        return qty;
     }
 
     public void setKuantitas(Integer kuantitas) {
-        this.kuantitas = kuantitas;
+        this.qty = qty;
     }
 
     public Date getTglTransaksi() {
@@ -83,8 +83,12 @@ public class Transaksi {
         this.tglTransaksi = tglTransaksi;
     }
 
-    public enum tipeBayar{
-        CASH, CEK, GIRO
+    public TipeBayar getTipeBayar() {
+        return tipeBayar;
+    }
+
+    public void setTipeBayar(TipeBayar tipeBayar) {
+        this.tipeBayar = tipeBayar;
     }
 
 }
